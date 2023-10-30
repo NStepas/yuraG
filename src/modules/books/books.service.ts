@@ -15,8 +15,6 @@ export class BooksService {
   }
 
   async createBook(createBookDto: CreateBookDto) {
-    const createdBook = await this.booksModel.create(createBookDto);
-
-    return createdBook;
+    return await this.booksModel.create(createBookDto);
   }
 }
