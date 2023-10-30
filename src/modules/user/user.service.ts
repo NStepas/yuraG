@@ -9,9 +9,7 @@ export class UserService {
   constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) {}
 
   async createUser(createUserDto: CreateUserDto) {
-    const createUser = await this.userModel.create(createUserDto);
-
-    return createUser;
+    return await this.userModel.create(createUserDto);
   }
 
   async findAll(): Promise<User[]> {
